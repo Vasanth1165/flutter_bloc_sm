@@ -28,7 +28,8 @@ class ContainerPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 BlocBuilder<ContainerBloc, ContainerState>(
-                  buildWhen: (previous, current) => previous.isSwitched != current.isSwitched,
+                  buildWhen: (previous, current) =>
+                      previous.isSwitched != current.isSwitched,
                   builder: (context, state) {
                     return CupertinoSwitch(
                         value: state.isSwitched,
@@ -43,6 +44,8 @@ class ContainerPage extends StatelessWidget {
               height: 20,
             ),
             BlocBuilder<ContainerBloc, ContainerState>(
+                buildWhen: (previous, current) =>
+                    previous.opacity != current.opacity,
                 builder: (context, state) => Container(
                       height: MediaQuery.of(context).size.width / 2,
                       width: MediaQuery.of(context).size.width - 30,
@@ -52,6 +55,8 @@ class ContainerPage extends StatelessWidget {
               height: 20,
             ),
             BlocBuilder<ContainerBloc, ContainerState>(
+              buildWhen: (previous, current) =>
+                  previous.opacity != current.opacity,
               builder: (context, state) => Slider(
                 value: state.opacity,
                 onChanged: (val) {

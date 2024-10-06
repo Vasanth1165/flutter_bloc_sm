@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_sm/blocs/container_bloc/container_bloc.dart';
 import 'package:flutter_bloc_sm/blocs/counter_bloc/counter_bloc.dart';
+import 'package:flutter_bloc_sm/blocs/image_picker_bloc/image_picker_bloc.dart';
 import 'package:flutter_bloc_sm/main_page.dart';
+import 'package:flutter_bloc_sm/utills/image_picker_utill.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => CounterBloc()),
-        BlocProvider(create: (_) => ContainerBloc())
+        BlocProvider(create: (_) => ContainerBloc()),
+        BlocProvider(create: (_)=> ImagePickerBloc(ImagePickerUtill()))
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

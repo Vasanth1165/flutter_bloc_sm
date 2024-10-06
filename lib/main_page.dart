@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_sm/ui/container_page.dart';
 import 'package:flutter_bloc_sm/ui/counter_page.dart';
+import 'package:flutter_bloc_sm/ui/image_picker_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -32,6 +33,16 @@ class MainPage extends StatelessWidget {
                           builder: (context) => const ContainerPage()));
                 },
                 child: const Text("Container")),
+          ),
+          Center(
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ImagePickerPage()));
+                },
+                child: const Text("Image Picker")),
           )
         ],
       ),
