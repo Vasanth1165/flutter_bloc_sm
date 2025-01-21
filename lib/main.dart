@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_sm/blocs/comments/comments_bloc.dart';
 import 'package:flutter_bloc_sm/blocs/container_bloc/container_bloc.dart';
 import 'package:flutter_bloc_sm/blocs/counter_bloc/counter_bloc.dart';
 import 'package:flutter_bloc_sm/blocs/image_picker_bloc/image_picker_bloc.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => CounterBloc()),
         BlocProvider(create: (_) => ContainerBloc()),
-        BlocProvider(create: (_)=> ImagePickerBloc(ImagePickerUtill()))
+        BlocProvider(create: (_)=> ImagePickerBloc(ImagePickerUtill())),
+        BlocProvider(create: (_) => CommentsBloc()),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

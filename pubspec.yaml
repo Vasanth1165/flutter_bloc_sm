@@ -30,11 +30,12 @@ environment:
 dependencies:
   bloc: ^8.1.4
   cupertino_icons: ^1.0.2
+  dio: ^5.7.0
   equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: null
-  image_picker: 
+  image_picker: null
 
 dev_dependencies:
   flutter_lints: ^2.0.0
